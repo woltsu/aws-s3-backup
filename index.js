@@ -53,9 +53,12 @@ const getChangedFiles = async () => {
 
 // Returns true if a file has been changed since the last check
 const hasFileBeenChanged = async (file) => {
-  let timeSinceLastCheck = new Date(Date.now() - store.prev).getMinutes() + 2
-  const x = await exec(`find ${file} -mmin -${timeSinceLastCheck}`)
-  return x.stdout ? true : false
+  if (store.prev) {
+    let timeSinceLastCheck = new Date(Date.now() - store.prev).getMinutes() + 2
+    const x = await exec(`find ${file} -mmin -${timeSinceLastCheck}`)
+    return x.stdout ? true : false
+  }
+  return true
 }
 
 // Saves files to the given s3 bucket, returns

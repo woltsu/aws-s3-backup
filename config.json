@@ -1,4 +1,4 @@
 {
-  "bucket": "set4-ex3",
-  "target": "/Users/wolli/aws/set-4-ex-3"
+  "bucket": "bucket-name",
+  "target": "/full/path/to/folder"
 }
