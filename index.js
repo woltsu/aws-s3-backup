@@ -33,7 +33,7 @@ const getFiles = async () => {
   }
 }
 
-// Returns all files that have been changes or do not exist in s3
+// Returns all files that have been changed or do not exist in s3
 const getChangedFiles = async () => {
   const changedFiles = []
   const files = await getFiles()
