@@ -81,7 +81,7 @@ const saveFiles = async (files) => {
   return errFlag ? 0 : 1
 }
 
-// Main script
+// Main function
 const start = async () => {
   const changedFiles = await getChangedFiles()
   if (await saveFiles(changedFiles)) {
