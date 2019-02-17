@@ -55,8 +55,8 @@ const getChangedFiles = async () => {
 const hasFileBeenChanged = async (file) => {
   if (store.prev) {
     let timeSinceLastCheck = new Date(Date.now() - store.prev).getMinutes() + 2
-    const x = await exec(`find ${file} -mmin -${timeSinceLastCheck}`)
-    return x.stdout ? true : false
+    const p = await exec(`find ${file} -mmin -${timeSinceLastCheck}`)
+    return p.stdout ? true : false
   }
   return true
 }
